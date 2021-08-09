@@ -23,8 +23,8 @@ function drawBoard(number) {
         tempDiv.addEventListener('mouseenter', colorChangeHover);
         tempDiv.addEventListener('mousedown', colorChangeClick);
         tempDiv.addEventListener('mouseup', mouseUp);
-        //tempDiv.setAttribute('draggable', 'false');   
-        tempDiv.ondragstart = function() { return false; };
+        tempDiv.setAttribute('draggable', 'false');   
+        //tempDiv.ondragstart = function() { return false; };
         mainCanvas.appendChild(tempDiv);
     }
 }
