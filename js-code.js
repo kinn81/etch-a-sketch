@@ -1,5 +1,5 @@
 const mainCanvas = document.querySelector('div[data-key="mainCanvas"]');
-const boardSize = 600;
+const boardSize = 900;
 let rowsColumns = 16;
 let mouseClicked = 0;
 
