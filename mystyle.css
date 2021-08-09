@@ -1,26 +1,52 @@
-
-
 .canvasContainer {
     display:flex;
     flex-direction: column;
     height:100vh;
     align-items: center;
-    justify-content: center;
+    
 }
 
+.title {
+    border:2px solid black;
+    color: darkolivegreen;
+    font-family: 'Righteous', cursive;
+    font-size: 80px;
+}
 .mainCanvas {
     display:grid;
-    border: 2px solid black;
+    border: .2px solid black;
 }
 
-.buttonBar {
+.buttonBar { 
     display:flex;
     flex-direction:row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
+    width: 100%;
 }
 
 button {
-    margin:5px;
+    width: 200px;
+    margin:2px;
+    
+    border-radius: 5px
 }
 
+.resetButton {
+    background-color: red;
+    color: yellow;
+    border-radius: 5px;
+    font-size: 25px;    
+}
+
+.smallButton {
+    font-size: 20px;    
+}
+
+.medButton {
+    font-size: 25px;    
+}
+
+.largeButton {
+    font-size: 30px;    
+}

@@ -1,8 +1,7 @@
 const mainCanvas = document.querySelector('div[data-key="mainCanvas"]');
 const boardSize = 900;
-let rowsColumns = 16;
+let rowsColumns = 20;
 let mouseClicked = 0;
-
 
 drawBoard(rowsColumns);
 mainCanvas.style.gridTemplateRows = `repeat(${rowsColumns}, ${boardSize / rowsColumns}px)`;
@@ -19,47 +18,25 @@ function drawBoard(number) {
     mainCanvas.innerHTML = "";
     for (let i = 1; i <= number * number; i++) {
         let tempDiv = document.createElement('div');
-        tempDiv.style.border = '.2px solid lightgray';
+        tempDiv.style.border = '.2px solid gray';
         tempDiv.addEventListener('mouseenter', colorChangeHover);
         tempDiv.addEventListener('mousedown', colorChangeClick);
-        tempDiv.addEventListener('mouseup', mouseUp);
-        tempDiv.setAttribute('draggable', 'false');   
-        //tempDiv.ondragstart = function() { return false; };
+        tempDiv.ondragstart = function () { return false; };
         mainCanvas.appendChild(tempDiv);
     }
 }
+
 function colorChangeClick(e) {
     mouseClicked = 1;
-    e.target.style.backgroundColor = 'lightGray';
-
+    e.target.style.backgroundColor = 'black';
 }
 
-function mouseUp() {
-    mouseClicked = 0;
-}
 function colorChangeHover(e) {
-    //if (e.buttons > 0) {
-    if(mouseClicked == 1) {
-        //e.stopPropogation();
-        e.preventDefault();
-        e.target.style.backgroundColor = 'lightGray';
+    if (e.buttons > 0) {
+        e.target.style.backgroundColor = 'black';
     }
 }
 
 function resetBoard() {
     changeBoardSize(rowsColumns);
 }
-
-
-
-//Code to determine if the mouse button is pressed or not
-/*
-document.body.onmousedown = function() {
-    ++mouseDown;
-    console.log(mouseDown)
-  }
-
-document.body.onmouseup = function () {
-    mouseDown = 0;
-}
-*/

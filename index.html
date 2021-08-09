@@ -8,21 +8,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="mystyle.css">
     <script src="./js-code.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
-
-
     <div class="canvasContainer">
+        <h1 class="title">Etch-A-Sketch</h1>
         <div data-key="mainCanvas" class="mainCanvas"></div>
         <div class="buttonBar">
-            <button onClick="changeBoardSize(10)">Small</button>
-            <button onClick="changeBoardSize(20)">Med</button>
-            <button onClick="changeBoardSize(40)">Large</button>
+            <button class="smallButton" onClick="changeBoardSize(20)">Small</button>
+            <button class="medButton" onClick="changeBoardSize(40)">Med</button>
+            <button class="largeButton" onClick="changeBoardSize(60)">Large</button>
         </div>
-        <div><button onClick="resetBoard()">Reset</button></div>
+        <div><button class="resetButton" onClick="resetBoard()">Reset</button></div>
     </div>
 
 </body>
-
 </html>
